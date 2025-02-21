@@ -6,8 +6,6 @@ name = "pypi"
 [packages]
 fastapi = "*"
 uvicorn = "*"
-pdfplumber = "*"
-python-docx = "*"
 pandas = "*"
 python-multipart = "*"
 google-genai = "*"
