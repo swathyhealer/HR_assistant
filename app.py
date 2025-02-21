@@ -38,11 +38,9 @@ def extract_criteria(file: UploadFile = File(...)):
     ```
     """
 
-    if (not file.filename.endswith(".pdf")) and (not file.filename.endswith(".docx")):
+    if not file.filename.endswith(".pdf"):
 
-        raise HTTPException(
-            status_code=400, detail="Only PDF or docx files are supported"
-        )
+        raise HTTPException(status_code=400, detail="Only PDF files are supported")
 
     file_path = Helper.save_job_doc(file)
     response = critera_getter.extract(file_path)
@@ -88,6 +86,9 @@ def score_resumes(
     """
     file_paths = []
     for file in files:
+        if not file.filename.endswith(".pdf"):
+
+            raise HTTPException(status_code=400, detail="Only PDF files are supported")
         file_paths.append(Helper.save_resume_doc(file))
     result = scorer.scoring_pipeline(criteria=criteria, file_paths=file_paths)
     print("completed scoring...!")
