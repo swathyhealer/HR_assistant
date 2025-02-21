@@ -120,7 +120,15 @@ Alan Brown      3                  5                  4                12
 ```
 
 ---
+---
 
+###  Sample Test Data
+To test the application, see sample test data under the folder:
+```
+sample_test_data/
+```
+
+---
 
 ###  Contribution Guidelines
 We welcome contributions to improve **HR Assistant**! Follow these steps to contribute:
