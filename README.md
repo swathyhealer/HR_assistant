@@ -31,7 +31,7 @@ export GEMINI_API_KEY="your_secret_api_key"
 
 **For Windows (PowerShell):**
 ```powershell
-$env:GEMINI_API_KEY='AIzaSyCkNr9Iacsw8EByA6EnwxOoCInmwnkn0kU'
+$env:GEMINI_API_KEY="your_secret_api_key"
 ```
 
 ---
