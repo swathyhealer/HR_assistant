@@ -69,7 +69,7 @@ def score_resumes(
       ],
       "files": [
         "<uploaded_resume_1.pdf>",
-        "<uploaded_resume_2.docx>",
+        "<uploaded_resume_2.pdf>",
         "<uploaded_resume_3.pdf>"
       ]
     }
