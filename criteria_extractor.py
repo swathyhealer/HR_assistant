@@ -44,7 +44,7 @@ Instructions:
         print("Job description file uploaded successfully !!!")
         response = self.client.models.generate_content(
             model=self.model_name,
-            contents=[file_upload, "summarize resume"],
+            contents=[file_upload, "Extract unique key ranking criteria from given job description"],
             config=types.GenerateContentConfig(
                 temperature=self.temperature,
                 seed=self.seed,
