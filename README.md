@@ -31,7 +31,7 @@ export GEMINI_API_KEY="your_secret_api_key"
 
 **For Windows (PowerShell):**
 ```powershell
-$env:GEMINI_API_KEY="your_secret_api_key"
+$env:GEMINI_API_KEY='AIzaSyCkNr9Iacsw8EByA6EnwxOoCInmwnkn0kU'
 ```
 
 ---
@@ -57,6 +57,70 @@ Once the server is running, you can access the interactive API documentation her
 - You can modify the FastAPI settings (e.g., host and port) in the `uvicorn` command.
 
 ---
+
+
+###  API Endpoints
+
+####  Extract Ranking Criteria from Job Description
+
+**API Endpoint:**
+```
+POST /extract-criteria
+```
+
+**Input Payload Example (Multipart Form-Data):**
+```json
+{
+  "file": "<uploaded_job_description.pdf>"
+}
+```
+
+**Output Payload Example:**
+```json
+{
+  "criteria": [
+    "Must have certification XYZ",
+    "5+ years of experience in Python development",
+    "Strong background in Machine Learning"
+  ]
+}
+```
+
+---
+
+####  Score Resumes Against Extracted Criteria
+
+**API Endpoint:**
+```
+POST /score-resumes
+```
+
+**Input Payload Example (Multipart Form-Data):**
+```json
+{
+  "criteria": [
+    "Must have certification XYZ",
+    "5+ years of experience in Python development",
+    "Strong background in Machine Learning"
+  ],
+  "files": [
+    "<uploaded_resume_1.pdf>",
+    "<uploaded_resume_2.pdf>",
+    "<uploaded_resume_3.pdf>"
+  ]
+}
+```
+
+**Output Payload Example (Excel or CSV Sheet):**
+```
+Candidate Name  Certification XYZ  Python Experience  Machine Learning  Total Score
+John Doe        5                  4                  4                13
+Jane Smith      4                  3                  5                12
+Alan Brown      3                  5                  4                12
+```
+
+---
+
 
 ###  Contribution Guidelines
 We welcome contributions to improve **HR Assistant**! Follow these steps to contribute:
